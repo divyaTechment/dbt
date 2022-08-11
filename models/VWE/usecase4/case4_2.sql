@@ -1,6 +1,6 @@
 
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
-Select count(distinct SUBSIDIARY_NAME) as total from  "VWE_S3"."PUBLIC"."SENTIMENTAL_FINAL" where SOURCE = 'Facebook'
+Select count(distinct SUBSIDIARY_NAME) as total from  "VWE"."PUBLIC"."SENTIMENTAL_FINAL" where SOURCE = 'Facebook'
 
 

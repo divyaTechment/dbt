@@ -1,7 +1,4 @@
-
-
-
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 {% if update %}
 Select * ,
@@ -11,10 +8,10 @@ Select * ,
     WHEN (RATING =3) THEN (  'Taste is good')
     WHEN (RATING =2) THEN (   'Did not like the smell and taste')
     WHEN (RATING =1) THEN ('Delayed Shipment')
-END  as remark from VWE_S3.PUBLIC.REVIEW_NEW
+END  as remark from VWE.PUBLIC.REVIEW_NEW
 WHERE REMARKS_BY_UNHAPPY_CUSTOMERS IS NULL
 {% else %}
-Select *  from VWE_S3.PUBLIC.REVIEW_NEW
+Select *  from VWE.PUBLIC.REVIEW_NEW
 WHERE REMARKS_BY_UNHAPPY_CUSTOMERS IS NOT NULL
 {% endif %}
 

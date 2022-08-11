@@ -1,0 +1,22 @@
+version: 2
+exposures:
+  
+  - name: dbt_dashboard
+    type: dashboard                         # required
+    maturity: high                          # optional
+    url: https://bi.tool/dashboards/1       # optional
+    description: >                          # optional
+      Did someone say "exponential growth"?
+    
+    depends_on:                             # expected
+      - ref('converted_user')
+      - ref('heritage_event')
+      - ref('christmas_event')
+      - ref('hallowen_event')
+      - ref('newyear_event')
+     
+
+    owner:
+      name: Divya               # optional
+      email: divya.kashyap@techment.com            # required
+

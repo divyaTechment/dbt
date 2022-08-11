@@ -3,11 +3,11 @@
  with
  order_new_obj as(
    Select CUSTOMER_ID,CUSTOMER_NAME,COUNTRY,STATES,CITY,REGION,ORDER_ID,ORDER_DATE,PRODUCT_ID,PRODUCT_NAME
-   from  "VWE_S3"."PUBLIC"."ORDER_NEW" 
+   from  "VWE"."PUBLIC"."ORDER_NEW" 
  ),
  
   order_tbl_obj as(
-   Select CUSTOMER_ID,CUSTOMER_NAME,URL,"Price($)" from "VWE_S3"."PUBLIC"."ORDER_TABLE" 
+   Select CUSTOMER_ID,CUSTOMER_NAME,URL,"Price($)" from "VWE"."PUBLIC"."ORDER_TABLE" 
  )
  
  select 

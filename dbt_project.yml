@@ -1,7 +1,7 @@
 
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
-# name or the intended use of these models
+# name or the intended use of these models 
 name: 'my_new_project'
 version: '1.0.0'
 config-version: 2
@@ -34,6 +34,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_new_project:
     # Applies to all files under models/example/
-    example:
+    staging:
       +materialized: view
-      +schema : usecase5_schema
+      +schema : NEW_STAGING_SCHEMA 
+      example:
+         +materialized: view
+         
+
+vars:
+  "base.source" : "VWE_S3.PUBLIC"
+  "base.order_new" : "order_new"
+  
+
+  
